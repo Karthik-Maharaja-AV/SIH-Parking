@@ -21,7 +21,7 @@ export default function Hero() {
           <br />
           <h1 className="text-4xl">Come Book your Parking Slots</h1>
           <br />
-          <Link to="book">
+          <Link to="/city">
             <button className="btn border-none hover:bg-blue-800 text-white font-bold normal-case bg-blue-500">
               See for Slots <BsFillArrowRightCircleFill />
             </button>

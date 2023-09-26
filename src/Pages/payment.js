@@ -8,18 +8,22 @@ export default function Payment() {
         <thead className="bg-gray-400">
           <tr>
             <th>Slot number</th>
+            <th>Entry Time</th>
+            <th>Exit Time</th>
             <th>Amount</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Slot 4</td>
-            <td>Rs.20</td>
+            <td>10 : 00 AM</td>
+            <td>12 : 00 AM</td>
+            <td>Rs.40</td>
           </tr>
         </tbody>
       </table>
       
-        <img src="./QR.png" className="w-44"></img>
+        
         <Link to="/success">
         <button className="btn bg-blue-400 border-none text-white hover:bg-blue-800 hover:shadow hover:shadow-xl hover:shadow-orange-400 font-bold">Make Payment</button>
         </Link>

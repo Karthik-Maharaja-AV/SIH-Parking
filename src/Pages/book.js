@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { GrRefresh } from "react-icons/gr";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../Pages/book.css";
 
 export default function Book() {
-  const [num, setNum] = useState(0);
+  const [num, setNum] = useState(3);
   function randomNumberInRange(min, max) {
     // 👇️ get number between min (inclusive) and max (inclusive)
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -47,7 +47,7 @@ export default function Book() {
   return (
     <div className="slot flex bg-gradient-to-r from-cyan-500 to-blue-500 items-center justify-center flex-col gap-10 h-screen">
       <h1 className="text-4xl flex gap-10 font-bold text-center">
-        Slots Available : <span className="text-blue-500">{num}</span>{" "}     
+        Slots Available : <span className="text-blue-500">{num}</span>{" "}
         <button
           className="btn bg-blue-400 border-none text-white hover:bg-blue-800 hover:shadow hover:shadow-xl hover:shadow-orange-400 font-bold"
           onClick={handleClick}
@@ -60,18 +60,21 @@ export default function Book() {
       <div className="grid grid-cols-4">
         {appState.objects.map((elements, index) => (
           <div
+          
             key={index}
-            className={toggleActiveStyles(index)}
+            className={toggleActiveStyles(index) +" flex items-center justify-center text-xl"}
             onClick={() => {
               toggleActive(index);
             }}
-          ></div>
+          >
+            Slot {elements.id}
+          </div>
         ))}
       </div>
-      <Link to="/payment">
-      <button className="btn border-none rounded bg-blue-400 hover:bg-blue-800 hover:shadow hover:shadow-xl hover:shadow-orange-400 text-white font-bold  ">
-        Book the Slot
-      </button>
+      <Link to="/qr">
+        <button className="btn border-none rounded bg-blue-400 hover:bg-blue-800 hover:shadow hover:shadow-xl hover:shadow-orange-400 text-white font-bold  ">
+          Book the Slot
+        </button>
       </Link>
     </div>
   );
